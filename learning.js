@@ -94,5 +94,59 @@ var catSays = function(max) {
 }
 */
 
+// Arrays:
+//syntax
+var arr = [2,"food",true,2.6]
+// arrays can be of different data types , and can be nested
+// methods and proprieties:
+
+// length
+var arr2 = [2,3,4,5]
+console.log(arr2.length)
+
+// push : add and element to the end of the array
+arr2.push(9)
+console.log(arr2)
+
+// pop : remove the last element of the array
+arr2.pop()
+console.log(arr2)
+
+// splice : lets you  add and remove from a specific (range) index in the array( from the starting index and the number of elements to delete and with what to replace):
+var donuts = ["cookies", "cinnamon sugar", "creme de leche"];
+donuts.splice(-2,0,"hello","goodMorning")
+console.log(donuts)
+
+// reverse:  reverses an array
+var reverseMe = ["o", "l", "l", "e", "h"];
+console.log(reverseMe.reverse())
+
+// sort : sorts an array
+var sortMe = [2, 1, 3, 7, 6];
+console.log(sortMe.sort())
+
+// shift : removes the first element of the array
+var removeFirstElement = ["a", "b", "c"];
+removeFirstElement.shift()
+console.log(removeFirstElement)
+
+// join : turn an array into a string
+var stringMe = ["o", "l", "l", "e", "h"];
+console.log(stringMe.join(''))
 
 
+// Objects:
+// objects are a data structure in JavaScript that lets you store data about a particular thing,
+// and helps you keep track of that data by using a "key".
+var identity = {
+    firstName: "Fouad",
+    lastName: "Charfaoui",
+    age: 18,
+    country : "Algeria",
+    job : function (){return "he is a software developer"}
+
+}
+// you can get the value using two methods:
+console.log(identity.lastName) // called "dot notation"
+console.log(identity["country"]) // called "bracket notation"
+console.log(identity.job())
