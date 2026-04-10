@@ -1,7 +1,13 @@
 const ps = require("prompt-sync")
 const input = ps()
 let ans
-
+let operators ={
+    "+":add,
+    "-":sub,
+    "*":mul,
+    "/":div,
+    "**":pow,
+}
 function add(a,b){
     return Number(a)+Number(b);
 }
@@ -72,17 +78,10 @@ function calculation(){
     ans = operators[operator](Number(num1),Number(num2))
     calculation()
 }
-
-let operators ={
-    "+":add,
-    "-":sub,
-    "*":mul,
-    "/":div,
-    "**":pow,
-}
 function __main__(){
 let menu = "Choose an operation please :\n1)add(+)\n2)subtract(-)\n3)multiply(*)\n4)divide(/)\n5)power of x(**)\n or write exit"
 console.log(menu)
 calculation()
 }
+
 __main__()
