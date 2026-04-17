@@ -67,7 +67,10 @@ function mark_as_done(){
         separator()
     }
     else{
-        task_num = Number(input("Enter the number of the task to mark: "))
+        let task_num = Number(input("Enter the number of the task to mark: "))
+        while(task_num<1 || task_num>tasks.length){
+            task_num = Number(input("Please enter a valid number: "))
+        }
         if(tasks[task_num-1].includes('[x]')){
             console.log("Task is already Done")
             separator()
