@@ -3,8 +3,8 @@ const input = ps()
 const api_key = "My key"
 
 async function get_weather(name) {
+    try{
     const response = await fetch("https://api.weatherapi.com/v1/current.json?key=" + api_key + "&q="+name)
-
     if (response.ok) {
         let data = await response.json()
         console.log("The Weather in: " + data.location.name + "\n" + "name: " + data.location.name + ' / ' + data.location.country + "\n"
@@ -14,9 +14,12 @@ async function get_weather(name) {
     } else {
         console.log("Error " + response.status)
     }
+    }catch (error){
+        console.log("Something went wrong :"+ error.name)
+    }
 }
-function main(){
+async function main(){
     var location = input("Enter the city to see the weather: ")
-    get_weather(location)
+    await get_weather(location)
 }
 main()
